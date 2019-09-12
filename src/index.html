@@ -5,16 +5,27 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  
   <body>
+    <input type="text" id="search">
+
+  <div>
+    <select id="filter" >
+      <option value="sortAscending" selected="selected">A-Z</option>
+      <option value="sortDescending">Z-A</option>
+  </select>
+  </div>
+
+ <div class="container" id="pokemonList">
+   
+ </div>
+
+
+
+
     <div id="root"></div>
-    <!-- <script src="data/injuries/injuries.js"></script> -->
-    <!-- <script src="data/lol/lol.js"></script> -->
-    <!-- <script src="data/patient/patient.js"></script> -->
-    <!-- <script src="data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="data/rickandmorty/rickandmorty.js"></script> -->
-    <!-- <script src="data/steam/steam.js"></script> -->
-    <!-- <script src="data/worldbank/worldbank.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+    <script src="data/pokemon/pokemon.js"></script> 
+  <script src="data.js"></script>
+  <script src="main.js"></script>
   </body>
 </html>
