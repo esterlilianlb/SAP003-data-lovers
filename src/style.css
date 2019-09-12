@@ -1,0 +1,18 @@
+body {
+    background-image: linear-gradient(black,grey, white);
+    background-repeat: no-repeat;
+}
+h1 {
+    font-family: 'Pokemon Hollow';
+    margin-top: 150px;
+    padding-left: 300px;
+    padding-top: 60px;
+    font-size: 60px;
+    background-image: url("pokedexkanto.png");
+    background-repeat: no-repeat;
+    background-color: #262626;
+    block-size: 250px;
+    background-position-x: 60px;
+    background-position-y: 20px;
+    border-radius: 50px;
+}
