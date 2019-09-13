@@ -8,7 +8,7 @@ body{
     background-color:rgba(243, 170, 30,1);
 }
 header{
-    height: 200px;
+    height: auto;
     display: flex;
     align-items:  center;
     flex-direction: row;
@@ -18,7 +18,6 @@ header{
 }
 .logo{
     width: 150px;
-    
     margin-left: 50px;
 }
 h1{
@@ -45,7 +44,7 @@ h1{
     justify-content: flex-end;
     margin-right: 50px;
     margin-top: 20px;
-
+    
 
 }
 
@@ -96,3 +95,19 @@ h1{
 .eggs{
     width: 25px;
 }
+
+@media only screen and (max-width: 800px) {
+    header {
+    padding: 0;
+      flex-direction: column;
+    justify-content: center;
+     
+    }
+    h1{
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    .logo{
+        margin-left: 0;
+    }
+  }
