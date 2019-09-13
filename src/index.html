@@ -5,10 +5,27 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  
   <body>
-    <h1>Pokédex</h1>
-    <script src="data/pokemon/pokemon.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+  <h1>Pokédex</h1>
+  <input type="text" id="search">
+
+  <div class="filter">
+    <select id="filter" >
+      <option value="sortAscending" selected="selected">A-Z</option>
+      <option value="sortDescending">Z-A</option>
+  </select>
+  </div>
+
+ <div class="container" id="pokemonList">
+   
+ </div>
+
+
+
+
+  <script src="data/pokemon/pokemon.js"></script> 
+  <script src="data.js"></script>
+  <script src="main.js"></script>
   </body>
 </html>

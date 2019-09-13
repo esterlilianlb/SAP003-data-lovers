@@ -1,8 +1,36 @@
-// esta é uma função de exemplo
-// veja como agregamos a função ao objeto global window
+const pokemonList = POKEMON.pokemon
+list(pokemonList)
 
-const example = () => {
-  return "example";
-};
+/*
+var elements = document.getElementById('minhaDiv'); // elemento presente desde inicio
 
-window.example = example;
+elements.addEventListener('change', function(e){
+  const pokemonsFiltrados = filtrarPorElemento(e.target.value);
+  list(pokemonsFiltrados)
+});
+
+function filtrarPorElemento(valorEscolhidoParaFiltrar) {
+  return valorEscolhidoParaFiltrar.filter(() => {
+    //return // blablabla
+  })
+}
+*/
+//usar .map
+function list (pokemons){
+  pokemons.forEach((pokemon) => {
+    document.getElementById('pokemonList').innerHTML += `
+    <img src="  ${pokemon.img}"/>
+    <p>Nome: ${pokemon.name}</p>
+    <p>Elemento: ${pokemon.type}</p>
+    <p>Ovos: ${pokemon.egg}</p>
+    <p>Fraquezas: ${pokemon.weaknesses}</p>
+    `
+  })
+}
+
+/*
+console.log
+                window.pokemon={
+                  pokemon: pokemon,
+                }
+*/
