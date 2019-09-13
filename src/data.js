@@ -4,6 +4,7 @@ function filterByType (typeToFilter) {
     return result;
   
 }
+
 function list (pokemons){
   document.getElementById('pokemonList').innerHTML = ""
   pokemons.forEach((pokemon) => {
