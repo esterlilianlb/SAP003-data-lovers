@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: pokemon;
     src: url('../assets/Pokemon-Hollow.ttf');
@@ -95,4 +96,5 @@ h1{
 
 .eggs{
     width: 25px;
+
 }

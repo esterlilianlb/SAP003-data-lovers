@@ -17,8 +17,6 @@ function filterByType (typeToFilter) {
   return result
 }
 
-
-
 function list (pokemons){
   pokemons.forEach((pokemon) => {
     document.getElementById('pokemonList').innerHTML += `
