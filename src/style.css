@@ -1,0 +1,98 @@
+@font-face {
+    font-family: pokemon;
+    src: url('../assets/Pokemon-Hollow.ttf');
+}
+body{
+    margin: 0;
+    padding:0;
+    background-color:rgba(243, 170, 30,1);
+}
+header{
+    height: 200px;
+    display: flex;
+    align-items:  center;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: rgb(10, 10, 22);
+    font-family: pokemon;
+}
+.logo{
+    width: 150px;
+    
+    margin-left: 50px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 100px;
+    color: rgba(250,208,37,1);
+    margin-top: 130px;
+    margin-left: 10px;
+    font-size: 45px;
+    
+}
+/*#search{
+    display: flex; 
+    justify-content: flex-start;
+    margin-top: 50px;
+    margin-left: 200px;
+    
+    
+}
+*/
+
+.filters{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+    margin-top: 20px;
+
+
+}
+
+/*#filterByAlphabet{
+    margin-right: 50px;
+}
+*/
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    align-items: center;
+    background-color: rgb(196, 147, 147);
+    margin-top: 15px;
+    border: 15px solid  rgba(191, 221, 209, 0.5);
+}
+
+.pokemon-image{
+    border-radius: 100%;
+    background-color: rgba(191, 221, 209, 0.5);
+    margin-top: 20px;
+}
+
+.name{
+    text-align: center;
+    font-size:28px;
+}
+      
+.pokemonInfo {
+    width: 90%;
+    height: auto;
+    background-color:rgba(191, 221, 209, 0.2);
+    text-align: left;
+    margin-bottom: 10px;        
+    border-radius: 5px; 
+    border:2px solid  rgba(65, 12, 60, 0.2);
+    padding-left: 10px;
+}
+      
+
+.eggs{
+    width: 25px;
+}
