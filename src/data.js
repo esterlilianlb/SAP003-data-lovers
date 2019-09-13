@@ -1,29 +1,35 @@
 const pokemonList = POKEMON.pokemon
 list(pokemonList)
 
-/*
-var elements = document.getElementById('minhaDiv'); // elemento presente desde inicio
+const pokemonTypes = document.querySelector("#filterByType")
 
-elements.addEventListener('change', function(e){
-  const pokemonsFiltrados = filtrarPorElemento(e.target.value);
-  list(pokemonsFiltrados)
+pokemonTypes.addEventListener("change", function(e){ 
+  const filteredPokemons = filterByType(e.target.value);
+  list(filteredPokemons)
 });
 
-function filtrarPorElemento(valorEscolhidoParaFiltrar) {
-  return valorEscolhidoParaFiltrar.filter(() => {
-    //return // blablabla
-  })
+
+
+function filterByType (typeToFilter) {
+  const result = pokemonList.filter(pokemon => {
+    return pokemon.type[0] === typeToFilter
+  });
+  return result
 }
-*/
-//usar .map
+
 function list (pokemons){
   pokemons.forEach((pokemon) => {
     document.getElementById('pokemonList').innerHTML += `
-    <img src="  ${pokemon.img}"/>
-    <p>Nome: ${pokemon.name}</p>
-    <p>Elemento: ${pokemon.type}</p>
-    <p>Ovos: ${pokemon.egg}</p>
-    <p>Fraquezas: ${pokemon.weaknesses}</p>
+
+    <div class="card">
+  <img class="pokemon-image" src="${pokemon.img}" alt="pokemon">
+  <p class="name"> ${pokemon.name}<p>
+  <div class="pokemonInfo">
+  <p><strong>Element:</strong>${pokemon.type}</p>
+  <p><strong>Eggs:</strong> ${pokemon.egg}</p>
+  <p><strong>weaknesses:</strong> ${pokemon.weaknesses}</p>
+    </div>
+  </div>
     `
   })
 }
