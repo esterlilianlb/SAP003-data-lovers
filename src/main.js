@@ -1,10 +1,11 @@
 const pokemonList = POKEMON.pokemon
 list(pokemonList)
 
-const pokemonTypes = document.querySelector("#filterByType")
 
-pokemonTypes.addEventListener("change", function(e){ 
-    const filteredPokemons = filterByType(e.target.value);
-    list(filteredPokemons)
-  });
-  
+const $pokemonTypes = document.querySelector("#filterByType");
+const $orderByAlphabet = document.querySelector("#orderByAlphabet");
+const $search = document.querySelector("#search");
+
+$orderByAlphabet.addEventListener("change", handleFilters);
+$pokemonTypes.addEventListener("change", handleFilters);
+$search.addEventListener("input", handleFilters);
