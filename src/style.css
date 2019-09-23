@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: pokemon;
   src: url('../assets/Pokemon-Hollow.ttf');
@@ -194,9 +195,15 @@ width: 100%;
   background-color: #fd7d24;
 }
 
+<<<<<<< HEAD
 .label-ghost{
   color: #ffffff;
   background-color: #7b62a3;
+=======
+.eggs{
+    width: 25px;
+
+>>>>>>> ee92cc24e811bf2f0bdc90f0a7497e038b0443e5
 }
 
 .label-ground{
