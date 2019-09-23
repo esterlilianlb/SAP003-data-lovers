@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  
-  <body>
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <header>
+<body>
+  <header>
+
+    <img class="logo" src="../assets/star.png">
+    <h1>Pokedex</h1>
+  </header>
+  <div class="pokemonListContainer">
+    <div class="filters">
+      <div class="search-bar-container">
+        <input placeholder="   Search a Pokemon" type="text" id="search">
+        </div>
+        <div class="filter">
+          <select id="orderByAlphabet">
+            <option value="" selected="selected">order by</option>
+            <option value="sortAscending">A-Z</option>
+            <option value="sortDescending">Z-A</option>
+          </select>
+          <select id="filterByType">
+            <option value="">Filter by</option>
+          </select>
+        </div>
+      </div>
+        <div id="pokemonList">
+        </div>
+      </div>
+       
+
+      <canvas id="myChart"></canvas>
+
       
-        <img class="logo" src="../assets/star.png">
-        <h1>Pokedex</h1>
-      </header>
-      
-     <!-- <input placeholder="Search a Pokemon" type="text" id="search"> -->
-  <div class="filters">
-    <!--<select id="filterByAlphabet" > -->
-    <!--<option value="sortAscending" selected="selected">A-Z</option> -->
-     <!--<option value="sortDescending">Z-A</option> -->
-    </select>
-    <select id="filterByType">
-      <option value="">Select a type</option>
-      <option value="Bug">Bug</option>
-      <option value="Dragon">Dragon</option>
-      <option value="Fire">Fire</option>
-      <option value="Ghost">Ghost</option>
-      <option value="Ground">Ground</option>
-      <option value="Normal">Normal</option>
-      <option value="Psychic">Psychic</option>
-      <option value="Electric">Electric</option>
-      <option value="Fighting">Fighting</option>
-      <option value="Flying">Flying</option>
-      <option value="Grass">Grass</option>
-      <option value="Ice">Ice</option>
-      <option value="Poison">Poison</option>
-      <option value="Rock">Rock</option>
+    
 
-  </select>
-  </div>
 
- <div class="container" id="pokemonList">
-   
- </div>
-
+  <div id="root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
-  </body>
+</body>
+
 </html>
