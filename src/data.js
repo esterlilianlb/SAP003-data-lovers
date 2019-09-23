@@ -1,4 +1,4 @@
-function handleFilters(){
+function handleFilters() {
   const filteredPokemons = filterByType($pokemonTypes.value);
   const orderedPokemons = orderByAlphabet($orderByAlphabet.value, filteredPokemons);
   list(orderedPokemons);
@@ -6,11 +6,10 @@ function handleFilters(){
   list(searchPokemons);
 };
 
-function filterByType (typeToFilter) {
+function filterByType(typeToFilter) {
   if (typeToFilter === "") {
     return [...pokemonList]
-  } 
-  else {
+  } else {
     const result = pokemonList.filter(pokemon => {
       return (pokemon.type.includes(typeToFilter))
     });
@@ -18,7 +17,7 @@ function filterByType (typeToFilter) {
   }
 }
 
-function orderByAlphabet(orderBy,orderedPokemons){
+function orderByAlphabet(orderBy, orderedPokemons) {
   const result = orderedPokemons;
   if (orderBy === "") {
     return result
@@ -30,45 +29,57 @@ function orderByAlphabet(orderBy,orderedPokemons){
         return -1
       }
     })
-  } 
+  }
   if (orderBy === "sortDescending") {
     return result.sort(function (a, b) {
-      if (a.name > b.name){
+      if (a.name > b.name) {
         return -1
       }
     })
   }
 
+} 
+function searchBy(searchPokemons, orderedPokemons) {
+  const result = orderedPokemons.filter((pokemon) => {
+    return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase())
+  });
+  console.log(result)
+  return result
 }
 
-function searchBy (searchPokemons, orderedPokemons) {
-const result = orderedPokemons.filter((pokemon) => {
-return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase())
-});
-return result
-}
 
-
-function list (pokemons) {
+function list(pokemons) {
   document.getElementById('pokemonList').innerHTML = ""
   pokemons.forEach((pokemon) => {
     document.getElementById('pokemonList').innerHTML += `
     <div class="card">
-  <img class="pokemon-image" src="${pokemon.img}" alt="pokemon">
-  <p class="name"> ${pokemon.name}<p>
-  <div class="pokemonInfo">
-  <p><strong>Element:</strong>${pokemon.type}</p>
-  <p><strong>Eggs:</strong> ${pokemon.egg}</p>
-  <p><strong>weaknesses:</strong> ${pokemon.weaknesses}</p>
+    <img class="pokemon-image" src="${pokemon.img}" alt="pokemon">
+    <div class="name-and-number">
+    <p class="name"> ${pokemon.name}<p>
+    <p class="pokemonNumber"># ${pokemon.num} </p>
     </div>
-  </div>
+    <div class="pokemonInfo">
+    <p class="element-title">Element:</p>
+
+    <div class="elements" id="elements">
+    ${listElements(pokemon.type)}
+    </div>
+
+    
+    </div>
+    </div>
+
     `
-  })
- }
+  })  
+
+}  
+
+      
+    
+      
+    
 
 
 /*
 window.pokemon={
-                  list: list,
-                  filterByType: filterByType,
-                }*/
+}*/
