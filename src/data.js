@@ -8,50 +8,49 @@ function handleFilters() {
 
 function filterByType(typeToFilter) {
   if (typeToFilter === "") {
-    return [...pokemonList]
+    return [...pokemonList];
   } else {
     const result = pokemonList.filter(pokemon => {
-      return (pokemon.type.includes(typeToFilter))
+      return (pokemon.type.includes(typeToFilter));
     });
-    return result
+    return result;
   }
 }
 
 function orderByAlphabet(orderBy, orderedPokemons) {
   const result = orderedPokemons;
   if (orderBy === "") {
-    return result
+    return result;
   }
 
   if (orderBy === "sortAscending") {
     return result.sort(function (a, b) {
       if (a.name < b.name) {
-        return -1
+        return -1;
       }
-    })
+    });
   }
   if (orderBy === "sortDescending") {
     return result.sort(function (a, b) {
       if (a.name > b.name) {
-        return -1
+        return -1;
       }
-    })
+    });
   }
 
 } 
 function searchBy(searchPokemons, orderedPokemons) {
   const result = orderedPokemons.filter((pokemon) => {
-    return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase())
+    return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase());
   });
-  console.log(result)
-  return result
+  console.log(result);
+  return result;
 }
 
-
 function list(pokemons) {
-  document.getElementById('pokemonList').innerHTML = ""
+  document.getElementById("pokemonList").innerHTML = "";
   pokemons.forEach((pokemon) => {
-    document.getElementById('pokemonList').innerHTML += `
+    document.getElementById("pokemonList").innerHTML += `
     <div class="card">
     <img class="pokemon-image" src="${pokemon.img}" alt="pokemon">
     <div class="name-and-number">
@@ -69,17 +68,13 @@ function list(pokemons) {
     </div>
     </div>
 
-    `
-  })  
+    `;
+  });  
 
 }  
 
-      
-    
-      
-    
-
-
-/*
-window.pokemon={
-}*/
+window.functions={
+  handleFilters,
+  filterByType, orderByAlphabet,
+  searchBy
+};
