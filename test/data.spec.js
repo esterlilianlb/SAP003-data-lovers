@@ -5,9 +5,9 @@ describe("handleFilters", () => {
     expect(typeof functions.handleFilters).toBe("function");
   });
 
-  // it("returns `example`", () => {
-  //   expect(example()).toBe("example");
-  // });
+  it("returns `handleFilters`", () => {
+    expect(example()).toBe("example");
+  });
 });
 
 describe("filterByType", () => {
