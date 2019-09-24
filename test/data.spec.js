@@ -15,9 +15,9 @@ describe("filterByType", () => {
     expect(typeof functions.filterByType).toBe("function");
   });
 
-  // it("returns `example`", () => {
-  //   expect(example()).toBe("example");
-  // });
+  it("returns `example`", () => {
+    expect(example()).toBe("example");
+  });
 });
 describe("orderByAlphabet", () => {
   it("is a function", () => {
