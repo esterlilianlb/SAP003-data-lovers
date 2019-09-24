@@ -1,4 +1,4 @@
-const pokemonList = POKEMON.pokemon;
+const pokemonList= POKEMON.pokemon;
 listPokemonsByType();
 list(pokemonList);
 

@@ -1,12 +1,12 @@
 function handleFilters() {
-  const filteredPokemons = filterByType($pokemonTypes.value);
-  const orderedPokemons = orderByAlphabet($orderByAlphabet.value, filteredPokemons);
+  const filteredPokemons = filterByType($pokemonTypes.value, pokemonList);
+  const orderedPokemons = orderByAlphabet($orderByAlphabet.value, filteredPokemons, pokemonList);
   list(orderedPokemons);
-  const searchPokemons = searchBy($search.value, orderedPokemons);
+  const searchPokemons = searchBy($search.value, orderedPokemons, pokemonList);
   list(searchPokemons);
 };
 
-function filterByType(typeToFilter) {
+function filterByType(typeToFilter, pokemonList) {
   if (typeToFilter === "") {
     return [...pokemonList];
   } else {
@@ -17,7 +17,7 @@ function filterByType(typeToFilter) {
   }
 }
 
-function orderByAlphabet(orderBy, orderedPokemons) {
+function orderByAlphabet(orderBy, orderedPokemons, pokemonList) {
   const result = orderedPokemons;
   if (orderBy === "") {
     return result;
@@ -39,7 +39,7 @@ function orderByAlphabet(orderBy, orderedPokemons) {
   }
 
 } 
-function searchBy(searchPokemons, orderedPokemons) {
+function searchBy(searchPokemons, orderedPokemons, pokemonList) {
   const result = orderedPokemons.filter((pokemon) => {
     return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase());
   });

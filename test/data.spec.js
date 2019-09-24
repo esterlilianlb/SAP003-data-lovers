@@ -4,10 +4,6 @@ describe("handleFilters", () => {
   it("is a function", () => {
     expect(typeof functions.handleFilters).toBe("function");
   });
-
-  // it("returns `handleFilters`", () => {
-  //   expect(example()).toBe("example");
-  // });
 });
 
 describe("filterByType", () => {
@@ -15,9 +11,38 @@ describe("filterByType", () => {
     expect(typeof functions.filterByType).toBe("function");
   });
 
-  // it("returns `example`", () => {
-  //   expect(example()).toBe("example");
-  // });
+  it("returns `example`", () => {
+    const mockPokemon= [{
+      "name": "Bulbasaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+    }, {
+      "name": "Ivysaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+    }, {
+      "name": "Venusaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ]
+    }, {
+      "name": "Charmander",
+      "type": [
+        "Fire"
+      ],
+    }];
+    expect(functions.filterByType("Fire", mockPokemon)).toEqual([{
+      "name": "Charmander",
+      "type": [
+        "Fire"
+      ],
+    }]);
+  });
 });
 describe("orderByAlphabet", () => {
   it("is a function", () => {
@@ -25,7 +50,7 @@ describe("orderByAlphabet", () => {
   });
 
   // it("returns `example`", () => {
-  //   expect(example()).toBe("example");
+  //   expect(functions.orderByAlphabet()).toBe("example");
   // });
 });
 describe("searchBy", () => {
@@ -34,6 +59,6 @@ describe("searchBy", () => {
   });
 
   // it("returns `example`", () => {
-  //   expect(example()).toBe("example");
+  //   expect(functions.searchBy()).toBe("example");
   // });
 });
