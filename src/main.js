@@ -1,8 +1,10 @@
+
 const pokemonList = POKEMON.pokemon
 const typesPokemon = [];
 const allDataElements = [];
 listPokemonsByType()
 list(pokemonList)
+
 
 const $pokemonTypes = document.querySelector("#filterByType");
 const $orderByAlphabet = document.querySelector("#orderByAlphabet");
@@ -38,6 +40,7 @@ function list(pokemons) {
 }
 
 function listElements(elements) {
+  
   let elementsList = ""
   elements.forEach((actualElement) => {
     elementsList += `
