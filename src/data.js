@@ -40,40 +40,39 @@ function orderByAlphabet(orderBy, orderedPokemons) {
 
 } 
 function searchBy(searchPokemons, orderedPokemons, pokemonList) {
+
   const result = orderedPokemons.filter((pokemon) => {
     return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase());
   });
-  return result;
+
+  return result
 }
 
-function list(pokemons) {
-  document.getElementById("pokemonList").innerHTML = "";
-  pokemons.forEach((pokemon) => {
-    document.getElementById("pokemonList").innerHTML += `
-    <div class="card">
-    <img class="pokemon-image" src="${pokemon.img}" alt="pokemon">
-    <div class="name-and-number">
-    <p class="name"> ${pokemon.name}<p>
-    <p class="pokemonNumber"># ${pokemon.num} </p>
-    </div>
-    <div class="pokemonInfo">
-    <p class="element-title">Element:</p>
+function countedType() {
+  const elements = allDataElements.reduce((allElements, type) => {
+    if (type in allElements) {
+      allElements[type]++;
+    } else {
+      allElements[type] = 1;
+    }
+    return allElements;
+  }, {});
 
-    <div class="elements" id="elements">
-    ${listElements(pokemon.type)}
-    </div>
+  return percentage(elements);
+}
 
-    
-    </div>
-    </div>
 
-    `;
-  });  
+function percentage(elements) {
+  for (let type in elements) {
+    elements[type] = ((elements[type] / 151) * 100).toFixed(2)
+  }
+  return elements;
+}
 
-}  
 
 window.functions={
   handleFilters,
   filterByType, orderByAlphabet,
   searchBy
 };
+
