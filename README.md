@@ -15,9 +15,9 @@
 O banco de dados escolhido para este projeto foi o Pokemon GO.
 O desenho do projeto foi feito de acordo com as necessidades imediatas que
 o usuário pode ter em relação ao jogo. Pensando nisso, acreditamos que informações
-como tipo e fraquezas são essencias, principalmente em momentos de escolha
-de pokémons para batalha. Este tipo de conhecimento pode ajudar a melhorar a eficiência
-e o resultado das batalhas.
+sobre o tipo dos pokemons são essencias, principalmente em momentos de escolha
+de pokémons para batalha, pois este conhecimento ajuda a melhorar a eficiência
+e o resultado nas batalhas.
 Dessa forma, as coisas básicas que o usuário precisaria para interagir com o produto
 seriam poder filtrar por tipo, ordenar em ordem alfabética e fazer uma pesquisa
 por nome dos pokémons.
@@ -28,28 +28,28 @@ A partir disso, criamos a seguinte persona:
 
  **Usuário**:  Jurema
 - 25 anos
-- trabalha na região central de São Paulo fazendo entregas pro ifood
-- retorna pra casa no fim da tarde
-- joga pokemon diariamente
+- Trabalha na região central de São Paulo fazendo entregas pro ifood;
+- Retorna pra casa no fim da tarde;
+- Joga pokemon diariamente.
 
 **Problema do usuário**:
-- Procura uma maneira prática de identificar pokemóns por tipos e fraquezas
+- Nossa usuária procura uma maneira prática de identificar as informações desejadas.
 
 **Objetivos do usuário**:
-- facilitar a escolha de pokemons pra batalhas
-- saber o tipo de cada pokémon
--
+- Facilitar a escolha de pokemons para batalhas;
+- Saber o tipo de cada pokémon.
+
 **Dados relevantes**:
-- imagem
-- ver de que tipo é cada pokemon
-- quais as fraquezas do pokemon
+- Imagem;
+- Nome;
+- Tipo dos pokemons.
 
 **Quando utilizariam o produto?**
-- quando forem jogar
+- quando forem jogar.
 
 **Filtros:**
-- por tipo
-- por ordem alfabética
+- Por tipo;
+- Por ordem alfabética.
 
 Com base da nossa persona escrevemos as seguintes histórias de usuário:
 
@@ -84,13 +84,15 @@ que permite pesquisar os pokémons pelo seu nome.
 No **terceiro sprint** deixamos a aplicação responsiva, para que possa ser
 visualizada em outras plataformas, e desenvolvemos os testes.
 
-O CSS e HTML foi modificados no decorrer dos três sprints de acordo com o
+O CSS e o HTML foram modificados no decorrer dos três sprints de acordo com o
 desenvolvimento das funcionalidades.
-A *definition of done* de cada funcionalidade que criamos foi 
 
-Para faze as funcionalidades tivemos que criar protótipos da aplicação
+Trabalhamos a partir da metodologia ágil e nossa *definition of done* foi a entrega de cada funcionalidade devidamente inclusa na página web já com o layout feito.
+
+Para fazer as funcionalidades, criamos protótipos da aplicação
 para identificar melhor as necessidades do usuário e efetuar os testes
 de usabilidade. 
 
+###headings
 
 ***
