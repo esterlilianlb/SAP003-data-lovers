@@ -1,6 +1,6 @@
 @font-face {
   font-family: pokemon;
-  src: url('../assets/Pokemon-Hollow.ttf');
+  src: url('/assets/Pokemon-Hollow.ttf');
 }
 
 ::-webkit-scrollbar {
@@ -51,12 +51,13 @@ p {
 
 .article{
   display: flex;
+  height: 80vh;
 }
 
 .pokemonListContainer {
   display: flex;
   width: 50%;
-  height: 520px;
+  height: 100%;
   flex-direction: column;
   margin-left: 35px;
   margin-top: 15px;
@@ -81,7 +82,7 @@ p {
   width: 250px;
   height: 20px;
   border-radius: 10px;
-  background-image: url(../assets/search_icon.svg);
+  background-image: url('/assets/search_icon.svg');
   background-position: right 90% bottom 50%;
   background-repeat: no-repeat;
 }
@@ -102,6 +103,7 @@ p {
 
 #pokemonList {
   display: flex;
+  height: 85%;
   flex-flow: row wrap;
   justify-content: space-around;
   overflow-y: auto;
@@ -113,6 +115,7 @@ p {
   width: 20%;
   height: auto;
   flex-direction: column;
+  max-height: 65%;
   align-items: center;
   margin-top: 15px;
   box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
@@ -122,6 +125,7 @@ p {
 }
 
 .pokemon-image {
+  width: 90%;
   margin-top: 5px;
   border-radius: 10px;
   background-color: #afafaf80
@@ -258,7 +262,7 @@ p {
 .rightContainer {
   display: flex;
   width: 50%;
-  height: 520px;
+  height: 100%;
   flex-direction: column;
   margin: 15px 35px 50px 40px;
 }
@@ -281,8 +285,9 @@ p {
 .chart {
   display: flex;
   height: 80%;
-  align-items: flex-end;
-  padding: 60px 20px 20px 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   background-color: #ffffff;
@@ -292,6 +297,7 @@ p {
 .madeBy {
   display: flex;
   height: 20%;
+  min-height: 30px;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
@@ -329,16 +335,19 @@ a:visited {
 
   .pokemonListContainer {
     display: flex;
-    width: 95%;
+    width: auto;
     margin: 10px 5px 5px 5px;
+    min-height: 400px;
+  }
+  
+  #pokemonList {
+    height: 400px;
+
   }
 
   .card {
     width: auto;
-  }
-
-  .pokemon-image {
-    width: 90%
+    max-height: 250px;
   }
 
   .logo {
@@ -347,6 +356,10 @@ a:visited {
     margin-top: 0px;
   }
 
+  h1 {
+    width: auto;
+  }
+  
   .article{
     display:flex;
     flex-flow: column nowrap;
@@ -356,58 +369,26 @@ a:visited {
   .rightContainer {
     display: flex;
     width: 95%;
+    height: auto;
     margin-left: 5px;
     align-items: flex stretch;
-    border: 1px solid red;
   }
   
   
   .chart {
-    height: 100%;
-    width: 400px;
-    
-
-    }
-  }
-  
-  /*
-  display: flex;
-    height: 100%;
-    width: 400px;
-    flex-direction: column;
     align-items: center;
-    padding: 1px 1px 1px 1px;
-    
+    height: auto;
+    padding: 20px 0px 20px 0px;
+    min-height: 200px;
+  }
+
+
   .madeBy {
-    display: flex;
-    height: 20%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-    border-radius: 10px;
-    color: #ffffff;
+    height: 50px;
+    margin-top: 10px;
     background-color: #353535;
-  }
-  
-  .madeBy a {
-    color: #ffffff;
-  }
-  
-  .madeBy a:link,
-  a:visited {
-    text-decoration: none
-  }
-  
-  .madeBy a:hover {
-    text-decoration: underline;
-    color: rgb(255, 253, 253)
-  }
-  
-  .madeBy a:active {
-    text-decoration: none
+    height: 30px;
+ }
   }
   
   
-*/
-
-}

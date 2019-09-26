@@ -8,43 +8,44 @@ function handleFilters() {
 
 function filterByType(typeToFilter) {
   if (typeToFilter === "") {
-    return [...pokemonList]
+    return [...pokemonList];
   } else {
     const result = pokemonList.filter(pokemon => {
-      return (pokemon.type.includes(typeToFilter))
+      return (pokemon.type.includes(typeToFilter));
     });
-    return result
+    console.log(result);
+    return result;
   }
 }
 
 function orderByAlphabet(orderBy, orderedPokemons) {
   const result = orderedPokemons;
   if (orderBy === "") {
-    return result
+    return result;
   }
 
   if (orderBy === "sortAscending") {
     return result.sort(function (a, b) {
       if (a.name < b.name) {
-        return -1
+        return -1;
       }
-    })
+    });
   }
   if (orderBy === "sortDescending") {
     return result.sort(function (a, b) {
       if (a.name > b.name) {
-        return -1
+        return -1;
       }
-    })
+    });
   }
 
 }
 
 function searchBy(searchPokemons, orderedPokemons) {
   const result = orderedPokemons.filter((pokemon) => {
-    return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase())
+    return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase());
   });
-  return result
+  return result;
 }
 
 function countedType() {
@@ -60,10 +61,9 @@ function countedType() {
   return percentage(elements);
 }
 
-
 function percentage(elements) {
   for (let type in elements) {
-    elements[type] = ((elements[type] / 151) * 100).toFixed(2)
+    elements[type] = ((elements[type] / 151) * 100).toFixed(2);
   }
   return elements;
 }
