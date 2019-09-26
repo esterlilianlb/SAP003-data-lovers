@@ -36,33 +36,38 @@ const mockPokemonName= [{
 
 describe("handleFilters", () => {
   it("is a function", () => {
-    expect(typeof functions.handleFilters).toBe("function");
+    expect(typeof data.handleFilters).toBe("function");
   });
 });
 
 describe("filterByType", () => {
   it("is a function", () => {
-    expect(typeof functions.filterByType).toBe("function");
+    expect(typeof data.filterByType).toBe("function");
   });
 
-  it("returns `example`", () => {
-    expect(functions.filterByType("Fire", mockPokemon)).toEqual([{
+  it("returns `tipo de pokémon selecionado`", () => {
+    expect(data.filterByType("Fire", mockPokemon)).toEqual([{
       "name": "Charmander",
       "type": ["Fire"],
-    }]);
+    }]); 
   });
-  it("returns `example`", () => {
-    expect(functions.filterByType("", mockPokemon)).toEqual(mockPokemon);
+  it("returns `nenhum tipo é selecionado`", () => {
+    expect(data.filterByType("", mockPokemon)).toEqual(mockPokemon);
   });
 });
 
 describe("orderByAlphabet", () => {
   it("is a function", () => {
-    expect(typeof functions.orderByAlphabet).toBe("function");
+    expect(typeof data.orderByAlphabet).toBe("function");
+  });
+  
+  it("returns `nenhuma ordenação selecionada`", () => {
+    expect(data.orderByAlphabet("", mockPokemonName)).toEqual(mockPokemonName)
+    ;
   });
 
-  it("returns `example`", () => {
-    expect(functions.orderByAlphabet("sortAscending", mockPokemonName)).toEqual([{
+  it("returns `ordem alfabética de A-Z`", () => {
+    expect(data.orderByAlphabet("sortAscending", mockPokemonName)).toEqual([{
       "name": "Bulbasaur", 
     }, {
       "name": "Charmander", 
@@ -73,8 +78,9 @@ describe("orderByAlphabet", () => {
     }])
     ;
   });
-  it("returns `example`", () => {
-    expect(functions.orderByAlphabet("sortDescending", mockPokemonName)).toEqual([{
+
+  it("returns `ordem alfabética de Z-A`", () => {
+    expect(data.orderByAlphabet("sortDescending", mockPokemonName)).toEqual([{
       "name": "Venusaur", 
     }, {
       "name": "Ivysaur", 
@@ -88,13 +94,14 @@ describe("orderByAlphabet", () => {
 
 describe("searchBy", () => {
   it("is a function", () => {
-    expect(typeof functions.searchBy).toBe("function");
+    expect(typeof data.searchBy).toBe("function");
   });
 
-  it("returns `example`", () => {
-    expect(functions.searchBy("Charmander", mockPokemon)).toEqual([{
+  it("returns `nome do pokémon pesquisado`", () => {
+    expect(data.searchBy("Charmander", mockPokemon)).toEqual([{
       "name": "Charmander",
       "type": ["Fire"],
     }]);
   });
 });
+
