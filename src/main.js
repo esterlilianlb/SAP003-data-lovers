@@ -1,10 +1,9 @@
 
-const pokemonList = POKEMON.pokemon
+const pokemonList = POKEMON.pokemon;
 const typesPokemon = [];
 const allDataElements = [];
-listPokemonsByType()
-list(pokemonList)
-
+listPokemonsByType();
+list(pokemonList);
 
 const $pokemonTypes = document.querySelector("#filterByType");
 const $orderByAlphabet = document.querySelector("#orderByAlphabet");
@@ -13,14 +12,14 @@ const $search = document.querySelector("#search");
 $orderByAlphabet.addEventListener("change", handleFilters);
 $pokemonTypes.addEventListener("change", handleFilters);
 $search.addEventListener("input", () => {
-  const time = setTimeout(handleFilters, 300)
-  return time
+  const time = setTimeout(handleFilters, 300);
+  return time;
 });
 
 function list(pokemons) {
-  document.getElementById('pokemonList').innerHTML = ""
+  document.getElementById("pokemonList").innerHTML = "";
   pokemons.forEach((pokemon) => {
-    document.getElementById('pokemonList').innerHTML += `
+    document.getElementById("pokemonList").innerHTML += `
     <div class="card">
     <img class="pokemon-image" src="${pokemon.img}" alt="pokemon">
     <div class="name-and-number">
@@ -35,47 +34,66 @@ function list(pokemons) {
     </div>
   </div>
   </div>
-  `
-  })
+  `;
+  });
 }
 
 function listElements(elements) {
   
-  let elementsList = ""
+  let elementsList = "";
   elements.forEach((actualElement) => {
     elementsList += `
       <div class="label label-${actualElement.toLowerCase()}">${actualElement.toLowerCase()}</div>
-      `
-  })
+      `;
+  });
   return elementsList;
 }
+
+function countedType() {
+  const elements = allDataElements.reduce((allElements, type) => {
+    if (type in allElements) {
+      allElements[type]++;
+    } else {
+      allElements[type] = 1;
+    }
+    return allElements;
+  }, {});
+
+  return percentage(elements);
+}
+
+function percentage(elements) {
+  for (let type in elements) {
+    elements[type] = ((elements[type] / 151) * 100).toFixed(2);
+  }
+  return elements;
+} 
 
 function listPokemonsByType() {
   pokemonList.forEach((pokemon) => {
     pokemon.type.forEach((elementType) => {
-      allDataElements.push(elementType)
+      allDataElements.push(elementType);
       if (!typesPokemon.includes(elementType)) {
         document.getElementById("filterByType").innerHTML += `
       <option value="${elementType}">${elementType}</option>
-      `
-        typesPokemon.push(elementType)
+      `;
+        typesPokemon.push(elementType);
       }
 
-    })
+    });
 
-  })
-  chartTypes(typesPokemon, Object.values(countedType()))
+  });
+  chartTypes(typesPokemon, Object.values(countedType()));
 }
 
-
 function chartTypes(labelList, dataList) {
-  const ctx = document.getElementById('myChart').getContext('2d');
+  const ctx = document.getElementById("myChart").getContext("2d");
   const chart = new Chart(ctx, {
-    type: 'doughnut',
+    type: "doughnut",
     data: {
       labels: labelList,
       datasets: [{
-        label: 'Percentage of Pokemon Types',
+        label: "Percentage of Pokemon Types",
         backgroundColor: [
           "#3a5f03",
           "#440b53",
