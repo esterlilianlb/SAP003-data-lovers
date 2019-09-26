@@ -1,4 +1,3 @@
-
 const pokemonList = POKEMON.pokemon;
 const typesPokemon = [];
 const allDataElements = [];
@@ -39,7 +38,7 @@ function list(pokemons) {
 }
 
 function listElements(elements) {
-  
+
   let elementsList = "";
   elements.forEach((actualElement) => {
     elementsList += `
@@ -111,19 +110,21 @@ function chartTypes(labelList, dataList) {
           "#9450c2",
           "#ecba95",
         ],
-
+        
         borderColor: "#353535",
         data: dataList,
       }]
-
-    },
-
-    // Configuration options go here
+      
+    },    
     options: {
       legend: {
-        position: "right"
-      }
-
+        position: "left",
+        labels: {
+          boxWidth: 10,
+          usePointStyle: true,
+        },
+      },
+      
     }
   });
 }

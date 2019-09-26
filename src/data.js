@@ -13,6 +13,7 @@ function filterByType(typeToFilter, pokemonList) {
     const result = pokemonList.filter(pokemon => {
       return (pokemon.type.includes(typeToFilter));
     });
+
     return result;
   }
 }
@@ -38,6 +39,7 @@ function orderByAlphabet(orderBy, orderedPokemons) {
         return -1;
       } else {
         return 1; 
+
       }
     });
   }
@@ -57,4 +59,3 @@ window.data={
   filterByType, orderByAlphabet,
   searchBy
 };
-
