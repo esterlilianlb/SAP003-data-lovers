@@ -16,5 +16,9 @@
     "htmlhint": "^0.10.1",
     "jest": "^23.6.0",
     "serve": "^11.0.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^23.6.0"
   }
 }
