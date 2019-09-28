@@ -71,6 +71,10 @@ alfabética A-Z e Z-A;
 pelo nome;
 - Deixar a aplicação responsiva.
 
+Este foi o nosso protótipo:  
+
+![Imgur](https://i.imgur.com/yQYKj8Y.png?1)  
+
 Como o projeto foi dividido em três sprints, as tarefas de desenvolvimento das
 funcionalidades foi separada entre eles.
 
