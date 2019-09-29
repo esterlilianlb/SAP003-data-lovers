@@ -48,26 +48,6 @@ function listElements(elements) {
   return elementsList;
 }
 
-function countedType() {
-  const elements = allDataElements.reduce((allElements, type) => {
-    if (type in allElements) {
-      allElements[type]++;
-    } else {
-      allElements[type] = 1;
-    }
-    return allElements;
-  }, {});
-
-  return percentage(elements);
-}
-
-function percentage(elements) {
-  for (let type in elements) {
-    elements[type] = ((elements[type] / 151) * 100).toFixed(2);
-  }
-  return elements;
-} 
-
 function listPokemonsByType() {
   pokemonList.forEach((pokemon) => {
     pokemon.type.forEach((elementType) => {
@@ -82,7 +62,7 @@ function listPokemonsByType() {
     });
 
   });
-  chartTypes(typesPokemon, Object.values(countedType()));
+  chartTypes(typesPokemon, Object.values(percentage(countedType(allDataElements), pokemonList.length)));
 }
 
 function chartTypes(labelList, dataList) {
