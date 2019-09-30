@@ -54,8 +54,29 @@ function searchBy(searchPokemons, orderedPokemons, pokemonList) {
   return result;
 }
 
+function countedType(dataElements) {
+  return dataElements.reduce((allElements, type) => {
+    if (type in allElements) {
+      allElements[type]++;
+    } else {
+      allElements[type] = 1;
+    }
+    return allElements;
+  }, {});
+}
+
+function percentage(elements, amountPokemons) {
+  for (let type in elements) {
+    elements[type] = ((elements[type] / amountPokemons) * 100).toFixed(2);
+  }
+  return elements;
+} 
+
 window.data={
   handleFilters,
-  filterByType, orderByAlphabet,
-  searchBy
+  filterByType, 
+  orderByAlphabet,
+  searchBy,
+  percentage,
+  countedType,
 };

@@ -24,6 +24,23 @@ const mockPokemon= [{
     "Fire"
   ],
 }];
+
+const mockPokemonElements = [
+  "Grass", 
+  "Grass", 
+  "Grass", 
+  "Poison", 
+  "Poison", 
+  "Poison", 
+  "Fire",
+];
+
+const mockPokemonElementsAmount = {
+  Grass: 3,
+  Poison: 3,
+  Fire: 1,
+};
+
 const mockPokemonName= [{
   "name": "Bulbasaur",
 }, {
@@ -105,3 +122,22 @@ describe("searchBy", () => {
   });
 });
 
+describe("countedType", () => {
+  it("returns the amount of pokemon type grass", () => {
+    expect(data.countedType(mockPokemonElements).Grass).toEqual(3);
+  });
+});
+
+describe("percentage", () => {
+  it("returns the percentage of pokemon type grass", () => {
+    expect(data.percentage(mockPokemonElementsAmount, mockPokemon.length).Grass).toEqual("75.00");
+  });
+});
+
+/*
+  describe("countedType", () => {
+    it("is a function", () => {
+      expect(typeof data.countedType).toEqual("");
+    });
+
+*/
