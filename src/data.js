@@ -1,8 +1,8 @@
 function handleFilters() {
   const filteredPokemons = filterByType($pokemonTypes.value, pokemonList);
   const orderedPokemons = orderByAlphabet($orderByAlphabet.value, filteredPokemons);
-  list(orderedPokemons);
-  const searchPokemons = searchBy($search.value, orderedPokemons, pokemonList);
+  const searchPokemons = searchBy($search.value, orderedPokemons);
+  
   list(searchPokemons);
 };
 
