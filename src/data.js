@@ -1,17 +1,19 @@
 function handleFilters() {
-  const filteredPokemons = filterByType($pokemonTypes.value);
+  const filteredPokemons = filterByType($pokemonTypes.value, pokemonList);
   const orderedPokemons = orderByAlphabet($orderByAlphabet.value, filteredPokemons);
   const searchPokemons = searchBy($search.value, orderedPokemons);
+  
   list(searchPokemons);
 };
 
-function filterByType(typeToFilter) {
+function filterByType(typeToFilter, pokemonList) {
   if (typeToFilter === "") {
     return [...pokemonList];
   } else {
     const result = pokemonList.filter(pokemon => {
       return (pokemon.type.includes(typeToFilter));
     });
+
     return result;
   }
 }
@@ -26,6 +28,8 @@ function orderByAlphabet(orderBy, orderedPokemons) {
     return result.sort(function (a, b) {
       if (a.name < b.name) {
         return -1;
+      } else {
+        return 1;
       }
     });
   }
@@ -33,35 +37,25 @@ function orderByAlphabet(orderBy, orderedPokemons) {
     return result.sort(function (a, b) {
       if (a.name > b.name) {
         return -1;
+      } else {
+        return 1; 
+
       }
     });
   }
 
-}
+} 
+function searchBy(searchPokemons, orderedPokemons, pokemonList) {
 
-function searchBy(searchPokemons, orderedPokemons) {
   const result = orderedPokemons.filter((pokemon) => {
     return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase());
   });
+
   return result;
 }
 
-function countedType() {
-  const elements = allDataElements.reduce((allElements, type) => {
-    if (type in allElements) {
-      allElements[type]++;
-    } else {
-      allElements[type] = 1;
-    }
-    return allElements;
-  }, {});
-
-  return percentage(elements);
-}
-
-function percentage(elements) {
-  for (let type in elements) {
-    elements[type] = ((elements[type] / 151) * 100).toFixed(2);
-  }
-  return elements;
-}
+window.data={
+  handleFilters,
+  filterByType, orderByAlphabet,
+  searchBy
+};
