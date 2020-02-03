@@ -10,7 +10,9 @@ const $search = document.querySelector("#search");
 
 $orderByAlphabet.addEventListener("change", handleFilters);
 $pokemonTypes.addEventListener("change", handleFilters);
-$search.addEventListener("input", () => {
+$search.addEventListener("input", (e) => {
+  if (e.target.value === "") return pokemonList;
+  if (e.target.value.length < 3) return
   const time = setTimeout(handleFilters, 300);
   return time;
 });

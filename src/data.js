@@ -25,32 +25,18 @@ function orderByAlphabet(orderBy, orderedPokemons) {
   }
 
   if (orderBy === "sortAscending") {
-    return result.sort(function (a, b) {
-      if (a.name < b.name) {
-        return -1;
-      } else {
-        return 1;
-      }
-    });
+    return result.sort((a, b) => a.name < b.name ? -1 : 1);
   }
   if (orderBy === "sortDescending") {
-    return result.sort(function (a, b) {
-      if (a.name > b.name) {
-        return -1;
-      } else {
-        return 1; 
-
-      }
-    });
+    return result.sort((a, b) => a.name > b.name ? -1 : 1);
   }
-
 } 
-function searchBy(searchPokemons, orderedPokemons, pokemonList) {
+
+function searchBy(searchPokemons, orderedPokemons) {
 
   const result = orderedPokemons.filter((pokemon) => {
     return pokemon.name.toLowerCase().match(searchPokemons.toLowerCase());
   });
-
   return result;
 }
 
